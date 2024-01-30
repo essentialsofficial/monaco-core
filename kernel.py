@@ -1,4 +1,8 @@
 import os
 
-with open('procman.py','r') as f:
-    exec(f.read())
+def setupsystem():
+    try:
+        with open("etc/systemrun", 'r') as f:
+            exec(f.read())
+    except IOError:
+        print("[ERROR] systemrun not found")
